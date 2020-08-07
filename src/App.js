@@ -3,23 +3,29 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const name = ['Munna','Mowri','Saleh'];
+  const department = ['Software','Software','Textile'];
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit Done <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>React JS</h1>
+        <Person name={name[0]} department="Software" university="DIU"></Person>
+        <Person name="Mowri" department="Software" university="DIU"></Person>
+        <Person name={name[2]} department="CSE" university="DIU"></Person>
       </header>
     </div>
+  );
+}
+
+function Person(props){
+  
+  return (
+    <div style={{border:"2px solid white",margin:'10px'}}>
+      <h2>Name: {props.name}</h2>
+      <h2>Department: {props.department}</h2>
+      <h3>{props.university}</h3>
+    </div>
+
   );
 }
 
